@@ -12,5 +12,8 @@ class MyProfile(models.Model):
     bio = models.TextField()
     other_contacts = models.TextField()
 
+    def full_name(self):
+        return self.name + ' ' + self.last_name
+
     def __unicode__(self):
         return self.name + ' ' + self.last_name

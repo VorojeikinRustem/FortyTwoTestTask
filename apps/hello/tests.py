@@ -1,14 +1,23 @@
-from django.test import TestCase
-
-# Create your tests here.
-
+from django.test import TestCase, Client
 from django.http import HttpRequest
+from models import MyProfile
 
-class SomeTests(TestCase):
 
-    def test_page_profile(self):
-        request = HttpRequest()
-        response = index(request)
-        self.assertTrue(response.content.startswith(b'<html>')) 
-        self.assertIn(b'<title>42 Coffee Cups Test Assignment</title>', response.content) 
-        self.assertTrue(response.content.endswith(b'</html>'))  
+class ProfileTestCase(TestCase):
+    def setUp(self):
+        MyProfile.objects.create(
+            name = 'Vova',
+            last_name = 'Ivanov',
+            date_of_birth = '1992-12-27',
+            email = 'vova@mail.ru',
+            skype = 'vova',
+            bio = 'pass',
+            other_contacts = 'vova@gmail.com'
+        )
+
+    def test_profile(self):
+        vova = MyProfile.objects.get(name="Vova")
+        self.assertEqual(vova.full_name(), 'Vova Ivanov')
+
+
+
