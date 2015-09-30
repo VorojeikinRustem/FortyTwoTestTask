@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}42 Coffee Cups Test Assignment{% endblock title %}
+{% block content %}
+<h1>My profile</h1>
+
+<table style="border:2px solid black; padding: 15px">
+    <tr>
+        <td>Name: {{ profile.name }}</td>
+        <td>Date of birth: {{ profile.date_of_birth }}</td>
+    </tr>
+    <tr>
+        <td>Last name: {{ profile.last_name }}</td>
+        <td>Email: {{ profile.last_name }}</td>
+    </tr>
+    <tr>
+    		<td>&nbsp;</td>
+        <td>Skype: {{ profile.skype }}</td>
+    </tr>
+    <tr>
+        <td>Bio: {{ profile.bio }}</td>
+        <td>Other contacts: {{ profile.other_contacts }} </td></tr>
+</table>
+
+{% endblock %}
