@@ -20,4 +20,6 @@ class ProfileTestCase(TestCase):
         self.assertEqual(vova.full_name(), 'Vova Ivanov')
 
 
-
+    def test_http_response(self):
+        response = self.client.get('/http_requests/')
+        self.assertEqual(response.status_code, 200)
