@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Headers{% endblock %}
+
+{% block content %}
+<h1>{{ len_http_requests }} http requests</h1>
+{% for k in http_requests %}
+<p> {{ k }}</p>
+{% endfor %}
+{% endblock %}

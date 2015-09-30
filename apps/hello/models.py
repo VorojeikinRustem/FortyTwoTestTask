@@ -17,3 +17,10 @@ class MyProfile(models.Model):
 
     def __unicode__(self):
         return self.name + ' ' + self.last_name
+
+        
+class HttpRequests(models.Model):
+    http_request = models.CharField(max_length=50)
+
+    def __unicode__(self):
+        return self.http_request
